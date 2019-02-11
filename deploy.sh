@@ -9,10 +9,23 @@
 # export TOMCAT_APP_PATH=tomcat在部署机器上的路径
 
 ### base 函数
+killDemo()
+{
+    pid=`ps -ef|grep demo|awk '{print $2}'`
+    echo "tomcat Id list :$pid"
+    if [ "$pid" = "" ]
+    then
+      echo "no demo pid alive"
+    else
+      kill -9 $pid
+    fi
+}
 
 cd $PROJ_PATH/demo
 mvn clean install
 
+# 停demo
+killDemo
 # 启动demo
 nohup java -jar $PROJ_PATH/demo/target/demo-0.0.1-SNAPSHOT.jar &
 
