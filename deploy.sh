@@ -11,7 +11,7 @@
 ### base 函数
 killDemo()
 {
-    pid=`ps -ef|grep demo|awk '{print $2}'`
+    pid=`ps -ef|grep demo-0.0.1-SNAPSHOT|awk '{print $2}'`
     echo "tomcat Id list :$pid"
     if [ "$pid" = "" ]
     then
