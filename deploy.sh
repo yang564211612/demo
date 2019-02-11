@@ -8,6 +8,12 @@
 # 输入你的环境上tomcat的全路径
 # export TOMCAT_APP_PATH=tomcat在部署机器上的路径
 
+
+
+echo "备份原有jar包"
+mv $PROJ_PATH/demo/target/demo-0.0.1-SNAPSHOT.jar $PROJ_PATH/demo/bak/demo-0.0.1-SNAPSHOT.jar_bak$(date +%Y%m%d%H%M)
+echo "备份原有jar包完毕"
+
 ### base 函数
 killDemo()
 {
